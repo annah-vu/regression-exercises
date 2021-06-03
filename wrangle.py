@@ -20,7 +20,7 @@ def new_telco_charge_data():
     join internet_service_types using(internet_service_type_id)
     join contract_types using(contract_type_id)
     join payment_types using(payment_type_id)
-    where contract_type_id = 2'''
+    where contract_type_id = 3'''
     df = pd.read_sql(sql_query, get_connection('telco_churn'))
     return df 
 
