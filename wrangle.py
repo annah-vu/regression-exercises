@@ -38,6 +38,7 @@ def clean_telco(df):
     df = df.replace(r'^\s*$', np.NaN, regex=True)
     df.total_charges = pd.to_numeric(df.total_charges, errors='coerce').astype('float64')
     df.total_charges = df.total_charges.fillna(value=df.total_charges.mean()).astype('float64')
+    df = df.set_index("customer_id")
     return df 
 
 
